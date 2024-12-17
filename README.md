@@ -9,7 +9,7 @@ incus admin init --auto
 git clone https://github.com/taylormonacelli/belowis
 cd belowis
 terraform init -upgrade
-terraform apply -auto-aprove
+terraform apply -auto-approve
 incus exec my-instance -- cat /etc/os-release
 
 # teardown

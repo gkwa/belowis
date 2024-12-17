@@ -5,12 +5,14 @@ This works
 ```bash
 incus admin init --auto
 
+# setup
 git clone https://github.com/taylormonacelli/belowis
 cd belowis
-terraform init
-terraform plan -out=tfplan
-terraform apply tfplan
+terraform init -upgrade
+terraform apply -auto-aprove
+incus exec my-instance -- cat /etc/os-release
 
+# teardown
 terraform destroy -auto-approve
 ```
 

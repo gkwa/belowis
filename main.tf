@@ -1,7 +1,8 @@
 terraform {
   required_providers {
     incus = {
-      source = "lxc/incus"
+      source  = "lxc/incus"
+      version = "0.2.0"
     }
   }
 }
@@ -19,11 +20,6 @@ resource "incus_instance" "my_instance" {
 
   config = {
     "boot.autostart" = true
-  }
-
-  limits = {
-    cpu    = 2
-    memory = "1GB"
   }
 
   device {
